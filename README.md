@@ -11,6 +11,13 @@ A fault-resistant, concurrent version of the popular game [2048](https://gabriel
 ## Use
 <p align="left"><img src="https://github.com/matt77hias/2048/blob/master/res/2048.png"></p>
 
+```erlang
+% 2048 with a blaster killing random tiles (the killing frequency can be manually modified)
+main:play()
+% 2048 without a blaster killing random tiles
+main:playnoblaster()
+```
+
 ## Design
 This is a brief description of the state (via parameter passing) of the manager and the tile processes and the new messages exchanged between them. For a more detailed description, I refer to the actual code and the very extensive logging (possible to enable/disable different items). 
 
