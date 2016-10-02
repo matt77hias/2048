@@ -6,7 +6,7 @@ Course Comparative Programming Languages: Distributed 2048
 **Score:** Maximum Score
 
 ## About
-A fault-resistant, concurrent version of the popular game [2048](https://gabrielecirulli.github.io/2048/).
+A fault-resistant, concurrent version of the popular game [2048](https://gabrielecirulli.github.io/2048/) (*written in Erlang*).
 
 ## Use
 <p align="left"><img src="https://github.com/matt77hias/2048/blob/master/res/2048.png"></p>
