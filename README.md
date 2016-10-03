@@ -19,7 +19,7 @@ main:playnoblaster()
 ```
 
 ## Design
-This is a brief description of the state (via parameter passing) of the manager and the tile processes and the new messages exchanged between them. For a more detailed description, I refer to the actual code and the very extensive logging (possible to enable/disable different items). 
+<p align="justify">This is a brief description of the state (via parameter passing) of the manager and the tile processes and the new messages exchanged between them. For a more detailed description, I refer to the actual code and the very extensive logging (possible to enable/disable different items).</p>
 
 ### The state of the manager process
 *	`State`: This variable refers to an atom representing the state the manager process is currently in. The manager process can be in one of five possible states:
