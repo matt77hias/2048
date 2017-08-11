@@ -1,3 +1,10 @@
+<img align="left" src="res/Logo.png" height="120px"/>
+
+[![License][s1]][li]
+
+[s1]: https://img.shields.io/badge/licence-GPL%203.0-blue.svg
+[li]: https://raw.githubusercontent.com/matt77hias/2048/master/LICENSE.txt
+
 # 2048
 Course Comparative Programming Languages: Distributed 2048
 
