@@ -58,21 +58,21 @@ Note that at most one tile process of a line can handle a movement at the same t
 
 ### Newly defined messages that the manager process can sent to a tile process
 * `{rc, NValue}`
-  * The tile process goes to `closed`, sends a `{ra, Id}` message to the manager process, resets most of its state to default values and its value to `NValue`. So the tile process enters a known state and will not leave this state. (Task 2)
+  * The tile process goes to `closed`, sends a `{ra, Id}` message to the manager process, resets most of its state to default values and its value to `NValue`. So the tile process enters a known state and will not leave this state.
 * `ro`
-  * The tile process goed to `passive` (it is opened again). (Task 2)
+  * The tile process goes to `passive` (it is opened again).
 * `new_turn`
   * The tile process resets its state to default values. A tile process must clean up its data to handle future movements correctly. The manager sends this message to all tile processes after completely handling a movement.
 
 ### Newly defined messages that can be sent to the manager process
 * `{finished, Id, Lineshot}`
-  * The tile process with identifier `Id` notifies the manager process that its part of the movement handling is finished, by sending the `lineshot` of the line it is responsible for. (Task 3)
+  * The tile process with identifier `Id` notifies the manager process that its part of the movement handling is finished, by sending the `lineshot` of the line it is responsible for.
 * `{collectedData, R}`
   * The `R` indicates if a random value must be generated and added (if possible) or not. This is an internal message (manager process to manager process). This message is also sent in the `manage()` function at start-up.
 * `{'EXIT', Pid, _}`
-  * All tile processes are linked to the manager process. If a tile process exits this message is received at the manager. (Task 2)
+  * All tile processes are linked to the manager process. If a tile process exits this message is received at the manager.
 * `{ra, Id}`
-  * An acknowledgement to an `{rc, NValue}`. (Task 2)
+  * An acknowledgement to an `{rc, NValue}`.
   
 All tile processes keep trying to send a message to another tile process till the message is successfully deposited in the mailbox of the other tile process. The manager process never tries more than once to send a message to a tile process because the manager process must also handle failed tile processes. Note that depositing a message in some process’ mailbox is not the same as that process receiving the message. If a process exits, all the messages in its mailbox are lost (and so unhandled).
 
