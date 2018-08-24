@@ -30,8 +30,8 @@ main:playnoblaster()
 
 ### The state of the manager process
 *	`State`: This variable refers to an atom representing the state the manager process is currently in. The manager process can be in one of five possible states:
-  *	`passive`: the manager process is currently not handling a movement;
-  *	`up`/`dn`/`lx`/`rx`: the manager process is currently handling an up/down/left/right movement.
+	* `passive`: the manager process is currently not handling a movement;
+	* `up`/`dn`/`lx`/`rx`: the manager process is currently handling an up/down/left/right movement.
 When the manager process is currently handling a movement, it will not handle a new movement.
 *	`Previous`: This variable refers to a list of 16 integer values. This list represents the snapshot of the board at the time of the last **completely** handled movement. This snapshot of the board will be compared with the snapshot of the board at the time of the next completely handled movement in order to determine if some change happened. If no change is observed, no new random value (*2* or *4*) will be added to the board.
 *	`Snapshot`: This variable refers to a list of 16 integer values. This list represents the snapshot of the board at the time of the last **partially** handled movement. A movement is handled completely if the four `lineshots` (columns or rows depending on the kind of movement) from the responsible tile processes are received and handled at the manager process. A movement is handled partially each time one of the four `lineshots` (except the last one) is received and handled at the manager process. Note that the order of receiving and handling the four `lineshots` is not known in advance. A `lineshot` refers to a list of four tuple values containing a tile id and a tile value.
